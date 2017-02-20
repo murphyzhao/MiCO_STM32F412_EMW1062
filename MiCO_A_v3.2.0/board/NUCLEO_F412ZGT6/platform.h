@@ -48,9 +48,11 @@
 
 typedef enum
 {
-//    MFG_SEL, 
-    EasyLink_BUTTON, 
     MICO_SYS_LED,
+    MICO_RF_LED,
+    BOOT_SEL,
+    MFG_SEL,
+    EasyLink_BUTTON,
     
     MICO_GPIO_1,
     MICO_GPIO_2,
@@ -67,12 +69,11 @@ typedef enum
     MICO_GPIO_12,
     MICO_GPIO_13,
     MICO_GPIO_14,
-
+    MICO_GPIO_15,
+    MICO_GPIO_16,
     MICO_GPIO_17,
     MICO_GPIO_18,
-    
     MICO_GPIO_19,
-
     MICO_GPIO_20,
     MICO_GPIO_21,
     MICO_GPIO_22,
@@ -83,9 +84,9 @@ typedef enum
     MICO_GPIO_NONE,
 } mico_gpio_t;
 
-#define MFG_SEL               (MICO_GPIO_NONE)
-#define MICO_RF_LED           (MICO_GPIO_NONE)
-#define BOOT_SEL              (MICO_GPIO_NONE)
+//#define MFG_SEL               (MICO_GPIO_NONE)
+//#define MICO_RF_LED           (MICO_GPIO_NONE)
+//#define BOOT_SEL              (MICO_GPIO_NONE)
 
 typedef enum
 {
@@ -158,11 +159,11 @@ typedef enum
 /* Arduino extention connector */
 #define Arduino_RXD         (MICO_GPIO_1)
 #define Arduino_TXD         (MICO_GPIO_2)
-#define Arduino_D2          (MICO_GPIO_3)
-#define Arduino_D3          (MICO_GPIO_4)
-#define Arduino_D4          (MICO_GPIO_5) 
-#define Arduino_D5          (MICO_GPIO_6)  
-#define Arduino_D6          (MICO_GPIO_7) 
+#define Arduino_D2          (MICO_GPIO_2)
+#define Arduino_D3          (MICO_GPIO_3)
+#define Arduino_D4          (MICO_GPIO_4)
+#define Arduino_D5          (MICO_GPIO_5)
+#define Arduino_D6          (MICO_GPIO_6)
 #define Arduino_D7          (MICO_GPIO_8)
 
 #define Arduino_D8          (MICO_GPIO_9)

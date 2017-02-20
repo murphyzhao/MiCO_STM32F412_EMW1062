@@ -80,35 +80,43 @@ extern WEAK void bootloader_start(void);
 const platform_gpio_t platform_gpio_pins[] =
 {
   /* Common GPIOs for internal use */  
-//  [MFG_SEL]                           = { GPIOB,  4 }, 
-  [EasyLink_BUTTON]                   = { GPIOC, 13 }, 
-  [MICO_SYS_LED]                      = { GPIOA,  5 }, 
+  [MICO_SYS_LED]                      = { GPIOB,  7 }, //PASS,BLUE LD2
+  [MICO_RF_LED]                       = { GPIOB,  14 },//PASS,RED LD3
+  [BOOT_SEL]                          = { GPIOE,  11 },//PASS,Arduino_D5 KEY1
+  [MFG_SEL]                           = { GPIOE,  9 }, //PASS,Arduino_D6 KEY2
+  [EasyLink_BUTTON]                   = { GPIOC, 13 }, //PASS,USER BUTTON BLUE
 
   /* GPIOs for external use */
-  [MICO_GPIO_1]                       = { GPIOA,  3 },
-  [MICO_GPIO_2]                       = { GPIOA,  2 },
-  [MICO_GPIO_3]                       = { GPIOA, 10 },
-  [MICO_GPIO_4]                       = { GPIOB,  3 },
-  [MICO_GPIO_5]                       = { GPIOB,  5 },
-  [MICO_GPIO_6]                       = { GPIOB,  4 },
-  [MICO_GPIO_7]                       = { GPIOB, 10 },
-  [MICO_GPIO_8]                       = { GPIOA,  8 },
+  [MICO_GPIO_1]                       = { GPIOC,  5 },//PASS,Arduino_D0,Arduino_RXD,USART2_RX,USER_UART,Arduino_UART
+  [MICO_GPIO_2]                       = { GPIOG,  9 },//PASS,Arduino_D1,Arduino_TXD,USART2_TX,USER_UART,Arduino_UART
+  [MICO_GPIO_3]                       = { GPIOF, 15 },//PASS,Arduino_D2,MIC MP34DT01 sensor
+  [MICO_GPIO_4]                       = { GPIOE, 13 },//PASS,Arduino_D3,MIC MP34DT01 sensor
+  [MICO_GPIO_5]                       = { GPIOF, 14 },//PASS,Arduino_D4,MIC MP34DT01 sensor
+  [MICO_GPIO_6]                       = { GPIOE, 11 },//PASS,Arduino_D5,Arduino_D5 KEY1
+  [MICO_GPIO_7]                       = { GPIOE,  9 },//PASS,Arduino_D6,Arduino_D6 KEY2
+  [MICO_GPIO_8]                       = { GPIOF, 13 },//PASS,Arduino_D7,FLASH SPI_SCS
+  [MICO_GPIO_9]                       = { GPIOF, 12 },//PASS,Arduino_D8,STmems RGB LED sensor
+  [MICO_GPIO_10]                      = { GPIOD, 15 },//PASS,Arduino_D9,STmems RGB LED sensor
   
-  [MICO_GPIO_9]                       = { GPIOA,  9 },
-  [MICO_GPIO_10]                      = { GPIOC,  7 },
-  [MICO_GPIO_11]                      = { GPIOB,  6 },
-  [MICO_GPIO_12]                      = { GPIOA,  7 },
-  [MICO_GPIO_13]                      = { GPIOA,  6 },
-  [MICO_GPIO_14]                      = { GPIOA,  5 },
-  [MICO_GPIO_17]                      = { GPIOB,  9 },
-  [MICO_GPIO_18]                      = { GPIOB,  8 },
+  [MICO_GPIO_11]                      = { GPIOD, 14 },//PASS,Arduino_D10,Arduino_CS,WIFI SPI_SCS
+  [MICO_GPIO_12]                      = { GPIOA,  7 },//PASS,or PB5//PASS,Arduino_D11,Arduino_SI,WIFI&FLASH SPI_MOSI
+  [MICO_GPIO_13]                      = { GPIOA,  6 },//PASS,Arduino_D12,Arduino_SO,WIFI&FLASH SPI_MISO
+  [MICO_GPIO_14]                      = { GPIOA,  5 },//PASS,Arduino_D13,Arduino_SCK,WIFI&FLASH SPI_SCK
+  [MICO_GPIO_15]                      = { GPIOB,  9 },//PASS,Arduino_D14,Arduino_SDA,STmems OLED
+                                                      //STmems Temperature & humidity sensor,STmems Pressure Sensor
+                                                      //STmems UV Index Sensor,Motion Sensor
+  [MICO_GPIO_16]                      = { GPIOB,  8 },//PASS,Arduino_D15,Arduino_SCL,STmems OLED
+                                                      //STmems Temperature & humidity sensor,STmems Pressure Sensor
+                                                      //STmems UV Index Sensor,Motion Sensor
   
-  [MICO_GPIO_19]                      = { GPIOC,  0 },
-  [MICO_GPIO_20]                      = { GPIOC,  1 },
-  [MICO_GPIO_21]                      = { GPIOB,  0 },
-  [MICO_GPIO_22]                      = { GPIOA,  4 }, //A2
-  [MICO_GPIO_23]                      = { GPIOA,  1 }, //A1
-  [MICO_GPIO_24]                      = { GPIOA,  0 }, //A0
+  [MICO_GPIO_17]                      = { GPIOA,  3 },//PASS,Arduino_A0,WIFI RESET
+  [MICO_GPIO_18]                      = { GPIOC,  0 },//PASS,Arduino_A1,WIFI SPI_IRQ
+  [MICO_GPIO_19]                      = { GPIOC,  3 },//PASS,Arduino_A2,STmems Light sensor
+  [MICO_GPIO_20]                      = { GPIOF,  3 },//PASS,Arduino_A3,STmems DC Motor sensor
+  [MICO_GPIO_21]                      = { GPIOF,  5 },//PASS,Arduino_A4,WIFI WAKEIN
+  [MICO_GPIO_22]                      = { GPIOF, 10 },//PASS,Arduino_A5,WIFI WAKEOUT
+  [MICO_GPIO_23]                      = { GPIOD,  9 },//PASS,STDIO_UART_RX,USART3_RX,Nucleo STLK_RX
+  [MICO_GPIO_24]                      = { GPIOD,  8 },//PASS,STDIO_UART_TX,USART3_TX,Nucleo STLK_TX
 
 };
 

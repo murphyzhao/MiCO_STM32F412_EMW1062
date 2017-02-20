@@ -47,10 +47,10 @@ extern "C"
 
 #define HARDWARE_REVISION   "1.0"
 #define DEFAULT_NAME        "NUCLEO"
-#define MODEL               "NUCLEO-F411RE"
+#define MODEL               "NUCLEO-F412ZGT6U"
 
 /* MICO RTOS tick rate in Hz */
-#define MICO_DEFAULT_TICK_RATE_HZ                   (1000) 
+#define MICO_DEFAULT_TICK_RATE_HZ                   (1000)                                          //RTOS时间片 1ms
 
   /************************************************************************
  * Uncomment to disable watchdog. For debugging only */
@@ -77,7 +77,7 @@ extern "C"
 #define RestoreDefault_TimeOut                      (3000)
 
 /************************************************************************
- * Restore default and start easylink after press down EasyLink button for 3 seconds. */
+ * CPU clock 100MHZ*/
 #define MCU_CLOCK_HZ            (100000000)
 
 /************************************************************************
@@ -88,7 +88,7 @@ extern "C"
  * Enable write protection to write-disabled embedded flash sectors */
 //#define MCU_EBANLE_FLASH_PROTECT 
 
-#define HSE_SOURCE              RCC_HSE_OFF               /* Use external crystal                 */
+#define HSE_SOURCE              RCC_HSE_OFF               /* Use internal crystal                 */
 #define AHB_CLOCK_DIVIDER       RCC_SYSCLK_Div1          /* AHB clock = System clock             */
 #define APB1_CLOCK_DIVIDER      RCC_HCLK_Div2            /* APB1 clock = AHB clock / 2           */
 #define APB2_CLOCK_DIVIDER      RCC_HCLK_Div1            /* APB2 clock = AHB clock / 1           */
@@ -96,7 +96,7 @@ extern "C"
 #define PLL_M_CONSTANT          16                       /* PLLM = 16                            */
 #define PLL_N_CONSTANT          400                      /* PLLN = 400                           */
 #define PLL_P_CONSTANT          4                        /* PLLP = 4                             */
-#define PPL_Q_CONSTANT          7                        /* PLLQ = 7                             */
+#define PPL_Q_CONSTANT          7                        /* PLLQ = 7    这个需要是8,7有问题SDIO超了                         */
 #define SYSTEM_CLOCK_SOURCE     RCC_SYSCLKSource_PLLCLK  /* System clock source = PLL clock      */
 #define SYSTICK_CLOCK_SOURCE    SysTick_CLKSource_HCLK   /* SysTick clock source = AHB clock     */
 #define INT_FLASH_WAIT_STATE    FLASH_Latency_3          /* Internal flash wait state = 3 cycles */
@@ -123,9 +123,9 @@ extern "C"
 #define MICO_USE_WIFI_RESET_PIN
 
 /*  Wi-Fi 32K pin is present */
-#define MICO_USE_WIFI_32K_PIN
+#define MICO_USE_WIFI_32K_PIN                                                                       //WiFi模块时钟由外部提供
 
-/*  USE SDIO 1bit mode */
+/*  USE SDIO 1bit mode. EMW1088需要使用*/
 //#define SDIO_1_BIT
 
 /* Wi-Fi power pin is active high */
@@ -138,7 +138,7 @@ extern "C"
  */
 //#define MICO_USE_WIFI_32K_CLOCK_MCO
 
-//#define MICO_USE_BUILTIN_RF_DRIVER
+//#define MICO_USE_BUILTIN_RF_DRIVER                                                                //表示用内部数据，而不是外部的RF driver
 
 #ifdef __cplusplus
 } /*extern "C" */
