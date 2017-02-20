@@ -110,9 +110,8 @@ typedef enum
 
 typedef enum
 {
-    MICO_ADC_1,
+    MICO_ADC_1,   /* F412 only one ADC 0-15 channel  */
     MICO_ADC_2,
-    MICO_ADC_3,
     MICO_ADC_MAX, /* Denotes the total number of ADC port aliases. Not a valid ADC alias */
     MICO_ADC_NONE,
 } mico_adc_t;
@@ -135,6 +134,7 @@ typedef enum
 
 typedef enum
 {
+  MICO_PARTITION_FILESYS,
   MICO_PARTITION_USER_MAX
 } mico_user_partition_t;
 
@@ -159,29 +159,29 @@ typedef enum
 /* Arduino extention connector */
 #define Arduino_RXD         (MICO_GPIO_1)
 #define Arduino_TXD         (MICO_GPIO_2)
-#define Arduino_D2          (MICO_GPIO_2)
-#define Arduino_D3          (MICO_GPIO_3)
-#define Arduino_D4          (MICO_GPIO_4)
-#define Arduino_D5          (MICO_GPIO_5)
-#define Arduino_D6          (MICO_GPIO_6)
+#define Arduino_D2          (MICO_GPIO_3)
+#define Arduino_D3          (MICO_GPIO_4)
+#define Arduino_D4          (MICO_GPIO_5)
+#define Arduino_D5          (MICO_GPIO_6)
+#define Arduino_D6          (MICO_GPIO_7)
 #define Arduino_D7          (MICO_GPIO_8)
-
 #define Arduino_D8          (MICO_GPIO_9)
 #define Arduino_D9          (MICO_GPIO_10)
+
 #define Arduino_CS          (MICO_GPIO_11)
 #define Arduino_SI          (MICO_GPIO_12)
 #define Arduino_SO          (MICO_GPIO_13)
 #define Arduino_SCK         (MICO_GPIO_14)
 
-#define Arduino_SDA         (MICO_GPIO_17)
-#define Arduino_SCL         (MICO_GPIO_18)
+#define Arduino_SDA         (MICO_GPIO_15)
+#define Arduino_SCL         (MICO_GPIO_16)
 
-#define Arduino_A0          (MICO_ADC_1)
-#define Arduino_A1          (MICO_ADC_2)
-#define Arduino_A2          (MICO_ADC_3)
-#define Arduino_A3          (MICO_ADC_NONE)
-#define Arduino_A4          (MICO_ADC_NONE)
-#define Arduino_A5          (MICO_ADC_3)
+#define Arduino_A0          (MICO_ADC_NONE)    //MICO_GPIO_17
+#define Arduino_A1          (MICO_ADC_NONE)    //MICO_GPIO_18
+#define Arduino_A2          (MICO_ADC_1)    //MICO_GPIO_19
+#define Arduino_A3          (MICO_ADC_2) //MICO_GPIO_20
+#define Arduino_A4          (MICO_ADC_NONE) //MICO_GPIO_21
+#define Arduino_A5          (MICO_ADC_NONE)    //MICO_GPIO_22
 
 #define Arduino_I2C         (MICO_I2C_1)
 #define Arduino_SPI         (MICO_SPI_1)

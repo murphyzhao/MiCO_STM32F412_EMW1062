@@ -111,10 +111,11 @@ const platform_gpio_t platform_gpio_pins[] =
   
   [MICO_GPIO_17]                      = { GPIOA,  3 },//PASS,Arduino_A0,WIFI RESET
   [MICO_GPIO_18]                      = { GPIOC,  0 },//PASS,Arduino_A1,WIFI SPI_IRQ
-  [MICO_GPIO_19]                      = { GPIOC,  3 },//PASS,Arduino_A2,STmems Light sensor
-  [MICO_GPIO_20]                      = { GPIOF,  3 },//PASS,Arduino_A3,STmems DC Motor sensor
+  [MICO_GPIO_19]                      = { GPIOC,  3 },//PASS,Arduino_A2,STmems Light sensor,ADC
+  [MICO_GPIO_20]                      = { GPIOC,  1 },//PASS,Arduino_A3,STmems DC Motor sensor,DAC
   [MICO_GPIO_21]                      = { GPIOF,  5 },//PASS,Arduino_A4,WIFI WAKEIN
   [MICO_GPIO_22]                      = { GPIOF, 10 },//PASS,Arduino_A5,WIFI WAKEOUT
+
   [MICO_GPIO_23]                      = { GPIOD,  9 },//PASS,STDIO_UART_RX,USART3_RX,Nucleo STLK_RX
   [MICO_GPIO_24]                      = { GPIOD,  8 },//PASS,STDIO_UART_TX,USART3_TX,Nucleo STLK_TX
 
