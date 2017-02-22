@@ -330,7 +330,7 @@ const platform_adc_t platform_adc_peripherals[] =
 const platform_gpio_t wifi_control_pins[] =
 {
   [WIFI_PIN_RESET   ]        = { GPIOA,  0 },
-  [WIFI_PIN_32K_CLK]         = { GPIOC,  1 },
+  [WIFI_PIN_32K_CLK]         = { GPIOC,  1 },//A4
 };
 
 /* Wi-Fi gSPI bus pins. Used by platform/MCU/STM32F2xx/EMW1062_driver/wlan_spi.c */

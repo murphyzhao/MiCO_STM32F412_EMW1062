@@ -21,17 +21,17 @@
 #  IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 ############################################################################### 
 
-NAME := Board_NUCLEO_F411RE
+NAME := Board_NUCLEO_F412ZGT6U
 
 WLAN_CHIP            	:= 43362
 WLAN_CHIP_REVISION   	:= A2
 WLAN_CHIP_FAMILY     	:= 43362
-WLAN_CHIP_FIRMWARE_VER  := 5.90.230.12
+WLAN_CHIP_FIRMWARE_VER  := 5.90.230.15
 
 MODULE              	:= 1062
 HOST_MCU_FAMILY      	:= STM32F4xx
-HOST_MCU_VARIANT     	:= STM32F411
-HOST_MCU_PART_NUMBER 	:= STM32F411RET6
+HOST_MCU_VARIANT     	:= STM32F412
+HOST_MCU_PART_NUMBER 	:= STM32F412ZGT6U
 
 JTAG                    := stlink-v2-1
 
@@ -48,7 +48,7 @@ GLOBAL_INCLUDES  := .
 # Global defines
 # HSE_VALUE = STM32 crystal frequency = 26MHz (needed to make UART work correctly)
 GLOBAL_DEFINES += $$(if $$(NO_CRLF_STDIO_REPLACEMENT),,CRLF_STDIO_REPLACEMENT)
-GLOBAL_LDFLAGS  += -L ./board/NUCLEO_F411RE
+GLOBAL_LDFLAGS  += -L ./board/NUCLEO_F412ZGT6
 
 # Components
 $(NAME)_COMPONENTS += drivers/spi_flash

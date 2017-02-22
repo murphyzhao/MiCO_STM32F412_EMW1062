@@ -79,6 +79,8 @@ typedef enum
     MICO_GPIO_22,
     MICO_GPIO_23,
     MICO_GPIO_24,
+//    MICO_GPIO_25,
+//    MICO_GPIO_26,
     
     MICO_GPIO_MAX, /* Denotes the total number of GPIO port aliases. Not a valid GPIO alias */
     MICO_GPIO_NONE,
@@ -120,6 +122,7 @@ typedef enum
 {
     MICO_UART_1,
     MICO_UART_2,
+//    MICO_UART_3,
     MICO_UART_MAX, /* Denotes the total number of UART port aliases. Not a valid UART alias */
     MICO_UART_NONE,
 } mico_uart_t;
@@ -176,22 +179,22 @@ typedef enum
 #define Arduino_SDA         (MICO_GPIO_15)
 #define Arduino_SCL         (MICO_GPIO_16)
 
-#define Arduino_A0          (MICO_ADC_NONE)    //MICO_GPIO_17
-#define Arduino_A1          (MICO_ADC_NONE)    //MICO_GPIO_18
+#define Arduino_A0          (MICO_GPIO_17)    //MICO_GPIO_17   MICO_ADC_NONE
+#define Arduino_A1          (MICO_GPIO_18)    //MICO_GPIO_18
 #define Arduino_A2          (MICO_ADC_1)    //MICO_GPIO_19
 #define Arduino_A3          (MICO_ADC_2) //MICO_GPIO_20
-#define Arduino_A4          (MICO_ADC_NONE) //MICO_GPIO_21
-#define Arduino_A5          (MICO_ADC_NONE)    //MICO_GPIO_22
+#define Arduino_A4          (MICO_GPIO_21) //MICO_GPIO_21
+#define Arduino_A5          (MICO_GPIO_22)    //MICO_GPIO_22
 
 #define Arduino_I2C         (MICO_I2C_1)
 #define Arduino_SPI         (MICO_SPI_1)
 #define Arduino_UART        (MICO_UART_2)
 
-#define USE_MiCOKit_STMEMS
+//#define USE_MiCOKit_STMEMS
 
 #ifdef USE_MiCOKit_STMEMS
 #define MICO_I2C_CP         (Arduino_I2C)
-#include "MiCOKit_STmems/MiCOKit_STmems_def.h" 
+#include "/drivers/MiCOKit_STmems/MiCOKit_STmems_def.h"
 #else
 #define MICO_I2C_CP         (MICO_I2C_NONE)
 #endif //USE_MiCOKit_STMEMS
