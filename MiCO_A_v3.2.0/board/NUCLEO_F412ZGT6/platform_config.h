@@ -96,7 +96,8 @@ extern "C"
 #define PLL_M_CONSTANT          16                       /* PLLM = 16                            */
 #define PLL_N_CONSTANT          400                      /* PLLN = 400                           */
 #define PLL_P_CONSTANT          4                        /* PLLP = 4                             */
-#define PPL_Q_CONSTANT          7                        /* PLLQ = 7    这个需要是8,7有问题SDIO超了                         */
+#define PPL_Q_CONSTANT          8                        /* PLLQ = 7    PLLQ=8时，SDIO是50MHZ,7的时候超了                         */
+#define PPL_R_CONSTANT          8                        /* PLLR = 8
 #define SYSTEM_CLOCK_SOURCE     RCC_SYSCLKSource_PLLCLK  /* System clock source = PLL clock      */
 #define SYSTICK_CLOCK_SOURCE    SysTick_CLKSource_HCLK   /* SysTick clock source = AHB clock     */
 #define INT_FLASH_WAIT_STATE    FLASH_Latency_3          /* Internal flash wait state = 3 cycles */
