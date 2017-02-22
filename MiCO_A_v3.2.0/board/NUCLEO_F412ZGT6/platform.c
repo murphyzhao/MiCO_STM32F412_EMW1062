@@ -164,8 +164,8 @@ const platform_uart_t platform_uart_peripherals[] =
       .stream                     = DMA1_Stream3,
       .channel                    = DMA_Channel_4,
       .irq_vector                 = DMA1_Stream3_IRQn,
-      .complete_flags             = DMA_HISR_TCIF3,
-      .error_flags                = ( DMA_HISR_TEIF3 | DMA_HISR_FEIF3 ),
+      .complete_flags             = DMA_LISR_TCIF3,             //DMA_LISR：DMA低中断状态寄存器,TCIF3：数据流x传输完成中断标志
+      .error_flags                = ( DMA_LISR_TEIF3 | DMA_LISR_FEIF3 | DMA_LISR_DMEIF3 ), //数据流传输错误中断标志
     },
     .rx_dma_config =
     {
@@ -173,8 +173,8 @@ const platform_uart_t platform_uart_peripherals[] =
       .stream                     = DMA1_Stream1,
       .channel                    = DMA_Channel_4,
       .irq_vector                 = DMA1_Stream1_IRQn,
-      .complete_flags             = DMA_HISR_TCIF1,
-      .error_flags                = ( DMA_HISR_TEIF1 | DMA_HISR_FEIF1 | DMA_HISR_DMEIF1 ),
+      .complete_flags             = DMA_LISR_TCIF1,
+      .error_flags                = ( DMA_LISR_TEIF1 | DMA_LISR_FEIF1 | DMA_LISR_DMEIF1 ),
     },
   },
   [MICO_UART_2] =
@@ -225,8 +225,8 @@ const platform_uart_t platform_uart_peripherals[] =
 //      .stream                     = DMA1_Stream5,
 //      .channel                    = DMA_Channel_4,
 //      .irq_vector                 = DMA1_Stream5_IRQn,
-//      .complete_flags             = DMA_LISR_TCIF5,
-//      .error_flags                = ( DMA_LISR_TEIF5 | DMA_LISR_FEIF5 | DMA_LISR_DMEIF5 ),
+//      .complete_flags             = DMA_HISR_TCIF5,
+//      .error_flags                = ( DMA_HISR_TEIF5 | DMA_HISR_FEIF5 ),
 //    },
 //  },
 };
