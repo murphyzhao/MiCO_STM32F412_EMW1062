@@ -49,6 +49,7 @@ extern "C"
 #define DEFAULT_NAME        "NUCLEO"
 #define MODEL               "NUCLEO-F412ZGT6U"
 
+//#define STM32F412xG
 /* MICO RTOS tick rate in Hz */
 #define MICO_DEFAULT_TICK_RATE_HZ                   (1000)                                          //RTOS时间片 1ms
 
@@ -88,7 +89,7 @@ extern "C"
  * Enable write protection to write-disabled embedded flash sectors */
 //#define MCU_EBANLE_FLASH_PROTECT 
 
-#define HSE_SOURCE              RCC_HSE_OFF               /* Use internal crystal                 */
+#define HSE_SOURCE              RCC_HSE_OFF               /* Use internal crystal                */
 #define AHB_CLOCK_DIVIDER       RCC_SYSCLK_Div1          /* AHB clock = System clock             */
 #define APB1_CLOCK_DIVIDER      RCC_HCLK_Div2            /* APB1 clock = AHB clock / 2           */
 #define APB2_CLOCK_DIVIDER      RCC_HCLK_Div1            /* APB2 clock = AHB clock / 1           */
@@ -96,15 +97,16 @@ extern "C"
 #define PLL_M_CONSTANT          16                       /* PLLM = 16                            */
 #define PLL_N_CONSTANT          400                      /* PLLN = 400                           */
 #define PLL_P_CONSTANT          4                        /* PLLP = 4                             */
-#define PPL_Q_CONSTANT          8                        /* PLLQ = 7    PLLQ=8时，SDIO是50MHZ,7的时候超了                         */
-#define PPL_R_CONSTANT          8                        /* PLLR = 8
+#define PPL_Q_CONSTANT          8                        /* PLLQ = 8 PLLQ=8时，SDIO是50MHZ,7的时候超了  */
+#define PPL_R_CONSTANT          2                        /* PLLR = 2                             */
 #define SYSTEM_CLOCK_SOURCE     RCC_SYSCLKSource_PLLCLK  /* System clock source = PLL clock      */
 #define SYSTICK_CLOCK_SOURCE    SysTick_CLKSource_HCLK   /* SysTick clock source = AHB clock     */
 #define INT_FLASH_WAIT_STATE    FLASH_Latency_3          /* Internal flash wait state = 3 cycles */
+#define PWR_WakeUp_Pin          PWR_WakeUp_Pin2          /* PWR_Wake_Up_Pin                      */
 
 /******************************************************
- *  EMW1062 Options
- ******************************************************/
+*  EMW1062 Options
+******************************************************/
 /*  Wi-Fi chip module */
 #define EMW1062
 
