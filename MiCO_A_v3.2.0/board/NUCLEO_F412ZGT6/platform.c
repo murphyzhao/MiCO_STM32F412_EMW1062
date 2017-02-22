@@ -87,8 +87,8 @@ const platform_gpio_t platform_gpio_pins[] =
   [EasyLink_BUTTON]                   = { GPIOC, 13 }, //PASS,USER BUTTON BLUE
 
   /* GPIOs for external use */
-  [MICO_GPIO_1]                       = { GPIOC,  5 },//PASS,Arduino_D0,Arduino_RXD,USART2_RX,USER_UART,Arduino_UART
-  [MICO_GPIO_2]                       = { GPIOG,  9 },//PASS,Arduino_D1,Arduino_TXD,USART2_TX,USER_UART,Arduino_UART
+  [MICO_GPIO_1]                       = { GPIOG,  9 },//PASS,Arduino_D0,Arduino_RXD,USART6_RX,USER_UART,Arduino_UART
+  [MICO_GPIO_2]                       = { GPIOG,  14 },//PASS,Arduino_D1,Arduino_TXD,USART6_TX,USER_UART,Arduino_UART
   [MICO_GPIO_3]                       = { GPIOF, 15 },//PASS,Arduino_D2,MIC MP34DT01 sensor
   [MICO_GPIO_4]                       = { GPIOE, 13 },//PASS,Arduino_D3,MIC MP34DT01 sensor
   [MICO_GPIO_5]                       = { GPIOF, 14 },//PASS,Arduino_D4,MIC MP34DT01 sensor
@@ -116,8 +116,11 @@ const platform_gpio_t platform_gpio_pins[] =
   [MICO_GPIO_21]                      = { GPIOF,  5 },//PASS,Arduino_A4,WIFI WAKEIN
   [MICO_GPIO_22]                      = { GPIOF, 10 },//PASS,Arduino_A5,WIFI WAKEOUT
 
-  [MICO_GPIO_23]                      = { GPIOD,  9 },//PASS,STDIO_UART_RX,USART3_RX,Nucleo STLK_RX
-  [MICO_GPIO_24]                      = { GPIOD,  8 },//PASS,STDIO_UART_TX,USART3_TX,Nucleo STLK_TX
+  [MICO_GPIO_23]                      = { GPIOD,  8 },//PASS,STDIO_UART_RX,USART6_RX,Nucleo STLK_RX
+  [MICO_GPIO_24]                      = { GPIOD,  9 },//PASS,STDIO_UART_TX,USART6_TX,Nucleo STLK_TX
+
+  [MICO_GPIO_25]                      = { GPIOA,  3 },//PASS,USART6_RX,USER_UART
+  [MICO_GPIO_26]                      = { GPIOA,  2 },//PASS,USART6_TX,USER_UART
 
 };
 
