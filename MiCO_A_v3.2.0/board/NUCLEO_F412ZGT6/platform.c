@@ -116,8 +116,8 @@ const platform_gpio_t platform_gpio_pins[] =
   [MICO_GPIO_21]                      = { GPIOF,  5 },//PASS,Arduino_A4,WIFI WAKEIN
   [MICO_GPIO_22]                      = { GPIOF, 10 },//PASS,Arduino_A5,WIFI WAKEOUT
 
-  [MICO_GPIO_23]                      = { GPIOD,  8 },//PASS,STDIO_UART_RX,USART3_RX,Nucleo STLK_RX
-  [MICO_GPIO_24]                      = { GPIOD,  9 },//PASS,STDIO_UART_TX,USART3_TX,Nucleo STLK_TX
+  [MICO_GPIO_23]                      = { GPIOD,  9 },//PASS,STDIO_UART_RX,USART3_RX,Nucleo STLK_RX
+  [MICO_GPIO_24]                      = { GPIOD,  8 },//PASS,STDIO_UART_TX,USART3_TX,Nucleo STLK_TX
 
 //  [MICO_GPIO_25]                      = { GPIOA,  3 },//PASS,USART2_RX,USER_UART
 //  [MICO_GPIO_26]                      = { GPIOA,  2 },//PASS,USART2_TX,USER_UART
@@ -470,9 +470,10 @@ void platform_init_peripheral_irq_priorities( void )
   NVIC_SetPriority( RTC_WKUP_IRQn    ,  1 ); /* RTC Wake-up event   */
   NVIC_SetPriority( SDIO_IRQn        ,  2 ); /* WLAN SDIO           */
   NVIC_SetPriority( DMA2_Stream3_IRQn,  3 ); /* WLAN SDIO DMA       */
-  NVIC_SetPriority( DMA2_Stream0_IRQn,  3 ); /* WLAN SPI DMA        */
-  NVIC_SetPriority( USART1_IRQn      ,  6 ); /* MICO_UART_1         */
-  NVIC_SetPriority( USART2_IRQn      ,  6 ); /* MICO_UART_2         */
+  NVIC_SetPriority( DMA2_Stream2_IRQn,  3 ); /* WLAN SPI DMA        */
+//  NVIC_SetPriority( DMA2_Stream5_IRQn,  3 ); /* WLAN SPI DMA        */
+  NVIC_SetPriority( USART3_IRQn      ,  6 ); /* MICO_UART_1         */
+  NVIC_SetPriority( USART6_IRQn      ,  6 ); /* MICO_UART_2         */
   NVIC_SetPriority( DMA1_Stream3_IRQn,  7 ); /* MICO_UART_1 TX DMA  */
   NVIC_SetPriority( DMA1_Stream1_IRQn,  7 ); /* MICO_UART_1 RX DMA  */
   NVIC_SetPriority( DMA2_Stream7_IRQn,  7 ); /* MICO_UART_2 TX DMA  */
