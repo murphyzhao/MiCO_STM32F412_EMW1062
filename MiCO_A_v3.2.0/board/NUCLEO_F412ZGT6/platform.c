@@ -469,7 +469,7 @@ void platform_init_peripheral_irq_priorities( void )
   /* Interrupt priority setup. Called by MiCO/platform/MCU/STM32F2xx/platform_init.c */
   NVIC_SetPriority( RTC_WKUP_IRQn    ,  1 ); /* RTC Wake-up event   */
   NVIC_SetPriority( SDIO_IRQn        ,  2 ); /* WLAN SDIO           */
-  NVIC_SetPriority( DMA2_Stream3_IRQn,  3 ); /* WLAN SDIO DMA       */
+//  NVIC_SetPriority( DMA2_Stream3_IRQn,  3 ); /* WLAN SDIO DMA       */
   NVIC_SetPriority( DMA2_Stream2_IRQn,  3 ); /* WLAN SPI DMA        */
 //  NVIC_SetPriority( DMA2_Stream5_IRQn,  3 ); /* WLAN SPI DMA        */
   NVIC_SetPriority( USART3_IRQn      ,  6 ); /* MICO_UART_1         */
@@ -544,17 +544,18 @@ void MicoRfLed(bool onoff)
 
 bool MicoShouldEnterMFGMode(void)
 {
-  if(MicoGpioInputGet((mico_gpio_t)BOOT_SEL)==false && MicoGpioInputGet((mico_gpio_t)MFG_SEL)==false)
-    return true;
-  else
+//  if(MicoGpioInputGet((mico_gpio_t)BOOT_SEL)==false && MicoGpioInputGet((mico_gpio_t)MFG_SEL)==false)
+//    return true;
+//  else
     return false;
 }
 
 bool MicoShouldEnterBootloader(void)
 {
-  if(MicoGpioInputGet((mico_gpio_t)BOOT_SEL)==false && MicoGpioInputGet((mico_gpio_t)MFG_SEL)==true)
-    return true;
-  else
-    return false;
+//  if(MicoGpioInputGet((mico_gpio_t)BOOT_SEL)==false && MicoGpioInputGet((mico_gpio_t)MFG_SEL)==true)
+//    return true;
+//  else
+//    return false;
+        return true;
 }
 
