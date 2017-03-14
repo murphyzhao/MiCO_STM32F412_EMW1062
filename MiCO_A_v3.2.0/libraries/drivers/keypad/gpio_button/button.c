@@ -85,9 +85,9 @@ void button_init( int index, button_init_t init)
   context[index].pressed_func = init.pressed_func;
   context[index].long_pressed_func = init.long_pressed_func;
 
-  MicoGpioInitialize( init.gpio, INPUT_PULL_UP );
+  MicoGpioInitialize( init.gpio, INPUT_PULL_DOWN );
   mico_rtos_init_timer( &context[index]._user_button_timer, init.long_pressed_timeout, button_timeout_handler_array[index], &context[index] );
-  MicoGpioEnableIRQ( init.gpio, IRQ_TRIGGER_FALLING_EDGE, button_irq_handler_array[index], &context[index] );
+  MicoGpioEnableIRQ( init.gpio, IRQ_TRIGGER_RISING_EDGE, button_irq_handler_array[index], &context[index] );
 }
 
 

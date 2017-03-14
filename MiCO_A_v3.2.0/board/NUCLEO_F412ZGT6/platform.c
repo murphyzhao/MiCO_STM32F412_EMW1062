@@ -41,7 +41,7 @@
 #include "CheckSumUtils.h"
 #include "keypad/gpio_button/button.h"
 
-#ifdef USE_MiCOKit_STMEMS
+#ifdef USE_MiCOKit_STMEMS//USE_MiCOKit_EXT  USE_MiCOKit_STMEMS
 #include "MiCOKit_STmems/MiCOKit_STmems.h"
 #endif
 
@@ -503,13 +503,13 @@ void init_platform( void )
   init.gpio = EasyLink_BUTTON;
   init.pressed_func = PlatformEasyLinkButtonClickedCallback;
   init.long_pressed_func = PlatformEasyLinkButtonLongPressedCallback;
-  init.long_pressed_timeout = 5000;
+  init.long_pressed_timeout = 3000;
 
   button_init( IOBUTTON_EASYLINK, init );
 
 }
 
-#ifdef BOOTLOADER
+//#ifdef BOOTLOADER
 
 void init_platform_bootloader( void )
 {
@@ -522,7 +522,7 @@ void init_platform_bootloader( void )
   MicoGpioInitialize((mico_gpio_t)MFG_SEL, INPUT_PULL_UP);
 }
 
-#endif
+//#endif
 
 void MicoSysLed(bool onoff)
 {
@@ -547,7 +547,7 @@ bool MicoShouldEnterMFGMode(void)
 //  if(MicoGpioInputGet((mico_gpio_t)BOOT_SEL)==false && MicoGpioInputGet((mico_gpio_t)MFG_SEL)==false)
 //    return true;
 //  else
-    return false;
+//    return false;
 }
 
 bool MicoShouldEnterBootloader(void)
@@ -556,6 +556,6 @@ bool MicoShouldEnterBootloader(void)
 //    return true;
 //  else
 //    return false;
-        return true;
+    return true;
 }
 
